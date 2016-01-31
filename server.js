@@ -6,7 +6,7 @@ var add_link = require('./add_link.js');
 var access_link = require('./access_link.js');
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
-var mongo_url = "mongodb://localhost:27017/data";
+var mongo_url = "mongodb://heroku_n5tzxw4r:bgegbscfvlkddoiieprkskrq03@ds051893.mongolab.com:51893/heroku_n5tzxw4r";
 
 /*
 MongoClient.connect(mongo_url, function(err, db){
