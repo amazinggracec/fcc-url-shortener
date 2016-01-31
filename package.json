@@ -11,6 +11,9 @@
     "socket.io": "~0.9.14",
     "valid-url": "^1.0.9"
   },
+  "engines":{
+    "node": "2.14.4"
+  },
   "scripts": {
     "start": "node server.js"
   },
