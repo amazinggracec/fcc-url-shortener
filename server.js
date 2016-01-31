@@ -1,3 +1,5 @@
+require('dotenv').load();
+
 var path = require('path');
 var express = require('express');
 var app = express();
@@ -6,7 +8,7 @@ var add_link = require('./add_link.js');
 var access_link = require('./access_link.js');
 // Retrieve
 var MongoClient = require('mongodb').MongoClient;
-
+var mongo_url = process.env.MONGO_URI;
 /*
 MongoClient.connect(mongo_url, function(err, db){
   if (err) throw err;
@@ -22,11 +24,13 @@ MongoClient.connect(mongo_url, function(err, db){
   );
 });
 */
-add_link(MongoClient, process.env.mongo_url, app);
-access_link(MongoClient, process.env.mongo_url, app);
+
+
+add_link(MongoClient, mongo_url, app);
+access_link(MongoClient, mongo_url, app);
 
 app.use(express.static(path.resolve(__dirname)));
 
-app.listen(port || 8080 /*, process.env.IP || "0.0.0.0" */, function(){
+app.listen(port || 8080 , process.env.IP || "0.0.0.0" , function(){
   console.log("Server listening at",port);
 });

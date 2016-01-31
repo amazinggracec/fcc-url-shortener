@@ -16,7 +16,6 @@ module.exports = function(MongoClient, mongo_url, app){
         }
         else {
           var sites = db.collection('sites');
-  
           sites.count({site: {$ne: ""}}, function(err, count){
             if (err) throw err;
             sites.insert({id: ++count, site: site});
