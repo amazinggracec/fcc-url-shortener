@@ -27,6 +27,6 @@ access_link(MongoClient, process.env.mongo_url, app);
 
 app.use(express.static(path.resolve(__dirname)));
 
-app.listen(port || 8080, process.env.IP || "0.0.0.0", function(){
+app.listen(port || 8080 /*, process.env.IP || "0.0.0.0" */, function(){
   console.log("Server listening at",port);
 });
